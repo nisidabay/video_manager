@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Video Manager</h1>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search videos...">
+            </div>
+            <h2>Folders</h2>
+            <ul id="folder-list"></ul>
+        </div>
+        <div id="resizer"></div>
+        <div class="main-content">
+            <div id="video-list"></div>
+        </div>
+    </div>
+    <div id="video-overlay" class="overlay">
+        <div class="overlay-content">
+            <video id="video-player" controls></video>
+            <button id="close-video" class="close-btn">&times;</button>
+        </div>
+    </div>
+    <div id="context-menu" class="context-menu">
+        <ul>
+            <li id="open-folder">Open in File Manager</li>
+        </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
